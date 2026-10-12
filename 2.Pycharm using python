@@ -1,0 +1,38 @@
+students = {}
+def add_student():
+    name = input("Enter student name: ")
+    marks = float(input("Enter marks: "))
+    if marks >= 90:
+        grade = "A+"
+    elif marks >= 80:
+        grade = "A"
+    elif marks >= 70:
+        grade = "B"
+    elif marks >= 60:
+        grade = "C"
+    else:
+        grade = "D"
+    students[name] = (marks, grade)
+    print("Student added successfully!")
+def display_students():
+    print("\nStudents Details")
+    print("---------------")
+    for name, details in students.items():
+        print("Name:", name)
+        print("Marks:", details[0])
+        print("Grade:", details[1])
+        print()
+while True:
+    print("1. Add Student")
+    print("2. Display Students")
+    print("3. Exit")
+    choice = input("Enter choice: ")
+    if choice == "1":
+        add_student()
+    elif choice == "2":
+        display_students()
+    elif choice == "3":
+        print("Exiting...")
+        break
+    else:
+        print("Invalid choice")
